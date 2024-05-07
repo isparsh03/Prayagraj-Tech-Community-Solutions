@@ -1,0 +1,21 @@
+fn check_sum_exists(arr: &[i32], x: i32) -> bool {
+    for i in 0..arr.len() {
+        for j in i + 1..arr.len() {
+            if arr[i] + arr[j] == x {
+                return true;
+            }
+        }
+    }
+    false
+}
+
+fn main() {
+    let arr = [0, -1, 42, -3, 1];
+    let x = -2;
+    
+    if check_sum_exists(&arr, x) {
+        println!("Two elements exist in the array that sum up to {}", x);
+    } else {
+        println!("No two elements exist in the array that sum up to {}", x);
+    }
+}
