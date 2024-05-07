@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check Sum of Two Elements</title>
+</head>
+<body>
+
+<script>
+    function checkSum(arr, x) {
+        let map = {};
+        for (let i = 0; i < arr.length; i++) {
+            if (map[arr[i]]) {
+                return true;
+            }
+            map[x - arr[i]] = true;
+        }
+        return false;
+    }
+
+    let arr = [0, -1, 42, -3, 1];
+    let x = -2;
+
+    if (checkSum(arr, x)) {
+        console.log("There exist two elements whose sum is exactly " + x);
+    } else {
+        console.log("No two elements sum up to " + x);
+    }
+</script>
+
+</body>
+</html>
